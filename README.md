@@ -32,11 +32,19 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+  React is an open-source, front end, JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies. 
+
 1. Describe component state.
+
+  The state object is where you store property values that belongs to the component.  When the state object changes, the component re-renders.
 
 1. Describe props.
 
+  Props are arguments passed into React components by HTML attributes.
+
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+  Side effects are things outside the scope of the function being executed, but are affected by the function.  Server calls and updates, changing global variables, things like that.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
