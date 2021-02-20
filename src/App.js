@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
+import styled from 'styled-components'
 
 const data = [
   {
@@ -149,6 +150,8 @@ const data = [
   },
 ];
 
+
+
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
@@ -171,8 +174,25 @@ const App = () => {
       })
   }, [])
 
+  const StyledApp = styled.div`
+  background-color: lightyellow;
+  width: 100%;
+  margin: auto;
+  padding: 0;
+  min-width: 480px;
+  max-width: 1080px;
+  height: auto;
+  text-align: center;
+  font-size: 62.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-item: center;
+  `
+
+
   return (
-    <div className="App">
+    <StyledApp>
       <h1 className="Header">I'm not visually expressive, and I don't make things;  I fix things that are broken, I spot errors that other people miss, and I correct things.  But staring at a blank page and having to make something is excruciating for me.  I'm awful at making things from scratch, especially visual things, especially when I have to know a foreign language (which JavaScript is for me) in order to execute it.  Everything I've done at Lambda so far has been copying things that work and tweaking them to fit the details of the assignment/project.  But short of completely stealing someone else's code, I don't know what to copy for this project.  And I have no idea how to create things from scratch.  There aren't even multiple tests in the CodeGrade for me to monitor any progress I might be making.  I'm totally lost.  I don't want to be a web designer.  I don't want to be a person who has to make things.  I know I'm absolutely failing this Sprint Challenge.  I'm not writing any of this to be funny nor cute.  I'm doing this because the alternative is descending into a fit of rage and disturbing my neighbors with loud noises.  Here are some Star Wars people I did by copying and pasting 42 paragraph tags:</h1>
       
       <p>Name: {data[0].name}</p>
@@ -217,7 +237,7 @@ const App = () => {
       <p>Eyes: {data[5].eye_color}</p>
       <p>Birth Year: {data[5].birth_year}</p>
       <p>Films: {data[5].films}</p>
-    </div>
+    </StyledApp>
   );
 }
 
