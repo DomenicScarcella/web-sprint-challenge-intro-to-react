@@ -157,52 +157,65 @@ const App = () => {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
 
-    
+  const [people, setPeople] = useState ('')
+
+  useEffect(() => {
+    axios
+      .get(`http://swapi.dev/api/people/`)
+      .then (res => {
+        setPeople(res.data)
+        console.log(res.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, [])
 
   return (
     <div className="App">
-      <h1 className="Header">I'm not visually expressive, and I don't make things;  I fix things that are broken, I spot errors that other people miss, and I correct things.  But staring at a blank page and having to make something is excruciating for me.  I'm awful at making things from scratch, especially visual things, especially when I have to know a foreign language (like JavaScript is for me) in order to execute it.  Everything I've done at Lambda so far has been copying things that work and tweaking them to fit the details of the assignment/project.  But short of completely stealing someone else's code, I don't know what to copy for this project.  And I have no idea how to create things from scratch.  There aren't even multiple tests in the CodeGrade for me to monitor any progress I might be making.  I'm totally lost.  I don't want to be a web designer.  I don't want to be a person who has to make things.  I know I'm absolutely failing this Sprint Challenge.  I'm not writing any of this to be funny nor cute.  I'm doing this because the alternative is descending into a fit of rage and disturbing my neighbors with loud noises.  Here are some Star Wars characters:</h1>
+      <h1 className="Header">I'm not visually expressive, and I don't make things;  I fix things that are broken, I spot errors that other people miss, and I correct things.  But staring at a blank page and having to make something is excruciating for me.  I'm awful at making things from scratch, especially visual things, especially when I have to know a foreign language (which JavaScript is for me) in order to execute it.  Everything I've done at Lambda so far has been copying things that work and tweaking them to fit the details of the assignment/project.  But short of completely stealing someone else's code, I don't know what to copy for this project.  And I have no idea how to create things from scratch.  There aren't even multiple tests in the CodeGrade for me to monitor any progress I might be making.  I'm totally lost.  I don't want to be a web designer.  I don't want to be a person who has to make things.  I know I'm absolutely failing this Sprint Challenge.  I'm not writing any of this to be funny nor cute.  I'm doing this because the alternative is descending into a fit of rage and disturbing my neighbors with loud noises.  Here are some Star Wars people I did by copying and pasting 42 paragraph tags:</h1>
+      
       <p>Name: {data[0].name}</p>
       <p>Height: {data[0].height}</p>
       <p>Mass: {data[0].mass}</p>
       <p>Hair: {data[0].hair_color}</p>
       <p>Eyes: {data[0].eye_color}</p>
-      <p>Birth Year:{data[0].birth_year}</p>
+      <p>Birth Year: {data[0].birth_year}</p>
       <p>Films: {data[0].films}</p>
       <p>Name: {data[1].name}</p>
       <p>Height: {data[1].height}</p>
       <p>Mass: {data[1].mass}</p>
       <p>Hair: {data[1].hair_color}</p>
       <p>Eyes: {data[1].eye_color}</p>
-      <p>Birth Year:{data[1].birth_year}</p>
+      <p>Birth Year: {data[1].birth_year}</p>
       <p>Films: {data[1].films}</p>
       <p>Name: {data[2].name}</p>
       <p>Height: {data[2].height}</p>
       <p>Mass: {data[2].mass}</p>
       <p>Hair: {data[2].hair_color}</p>
       <p>Eyes: {data[2].eye_color}</p>
-      <p>Birth Year:{data[2].birth_year}</p>
+      <p>Birth Year: {data[2].birth_year}</p>
       <p>Films: {data[2].films}</p>
       <p>Name: {data[3].name}</p>
       <p>Height: {data[3].height}</p>
       <p>Mass: {data[3].mass}</p>
       <p>Hair: {data[3].hair_color}</p>
       <p>Eyes: {data[3].eye_color}</p>
-      <p>Birth Year:{data[3].birth_year}</p>
+      <p>Birth Year: {data[3].birth_year}</p>
       <p>Films: {data[3].films}</p>
       <p>Name: {data[4].name}</p>
       <p>Height: {data[4].height}</p>
       <p>Mass: {data[4].mass}</p>
       <p>Hair: {data[4].hair_color}</p>
       <p>Eyes: {data[4].eye_color}</p>
-      <p>Birth Year:{data[4].birth_year}</p>
+      <p>Birth Year: {data[4].birth_year}</p>
       <p>Films: {data[4].films}</p>
       <p>Name: {data[5].name}</p>
       <p>Height: {data[5].height}</p>
       <p>Mass: {data[5].mass}</p>
       <p>Hair: {data[5].hair_color}</p>
       <p>Eyes: {data[5].eye_color}</p>
-      <p>Birth Year:{data[5].birth_year}</p>
+      <p>Birth Year: {data[5].birth_year}</p>
       <p>Films: {data[5].films}</p>
     </div>
   );
